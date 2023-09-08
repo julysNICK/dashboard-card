@@ -2,17 +2,16 @@
 import { SquaresPlusIcon, BuildingStorefrontIcon, HandThumbUpIcon, ServerIcon, MusicalNoteIcon } from '@heroicons/vue/24/solid';
 import Card from './components/Card.vue';
 
+import List from './components/List.vue'
+import RowCards from './components/RowCards.vue'
+
+
 
 
 
 </script>
 
 <template>
-  <!-- <header>
-    <meta charset="utf-8">
-    <title>Vue 3 + Vite + TypeScript</title>
-  </header> -->
-
   <body>
     <div class="grid-container">
       <header class="header">
@@ -21,56 +20,19 @@ import Card from './components/Card.vue';
         </div>
 
         <div class="header-left">
-          <ul class="list">
-            <li class="list-item">
-              <a href="#">
-                <span class="material-icons-outlined">
-                  <SquaresPlusIcon class="icon" />
-                </span> DASHBOARD
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="#">
-                <span class="material-icons-outlined">
-                  <BuildingStorefrontIcon class="icon" />
-                </span> PRODUCTS
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="#">
-                <span class="material-icons-outlined">
-                  <HandThumbUpIcon class="icon" />
-                </span> REPORTS
-              </a>
-            </li>
-
-            <li class="list-item">
-              <a href="#">
-                <span class="material-icons-outlined">
-                  <ServerIcon class="icon" />
-                </span> SETTINGS
-              </a>
-            </li>
-          </ul>
+          <List />
         </div>
 
         <div class="header-right">
           <ServerIcon class="icon" />
           <ServerIcon class="icon" />
           <ServerIcon class="icon" />
-
         </div>
       </header>
 
 
       <main class="main-container">
-        <div class="main-cards">
-          <Card color="red" title="PRODUCTS" value=193 />
-          <Card color="blue" title="ALERTS" value=193 />
-          <Card color="green" title="IMPORTANTS" value=193 />
-          <Card color="blue" title="ALERTS" value=193 />
-
-        </div>
+        <RowCards />
       </main>
 
     </div>
@@ -144,14 +106,8 @@ import Card from './components/Card.vue';
   color: #fff;
 }
 
-.list {
-  list-style-type: none;
-}
 
-.list-item {
-  display: inline;
-  padding: 20px 20px 20px 20px;
-}
+
 
 a {
   color: #fff;
@@ -178,13 +134,5 @@ a {
 
 .main-title>p {
   font-size: 20px;
-}
-
-.main-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin: 20px 0px;
-
 }
 </style>
