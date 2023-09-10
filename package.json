@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
-    "vue": "^3.3.4"
+    "chart.js": "^4.4.0",
+    "vue": "^3.3.4",
+    "vue-chartjs": "^5.2.0"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.0",

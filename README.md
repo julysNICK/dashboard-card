@@ -1,26 +1,25 @@
-# dashboard-card
+# DASHBOARD-ADMIN-VUEJS
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository was made to train my knowledge in Vue JS by building a dashboard with some Vue properties such as :data :class and others
 
-## Recommended IDE Setup
+## Links 
+- [Project 1 hagman](https://github.com/julysNICK/hangman_mobile_flutter)
+- [Project 2 guessing game](https://github.com/julysNICK/guessing_game)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Screenshots
 
-## Type Support for `.vue` Imports in TS
+You can find some screenshots of my UI projects below:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+![](images/image1.png)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+![](images/image2.png)
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Getting Started
 
-## Customize configuration
+To run the app, you'll need to have Flutter installed. Then, clone this repository, and run vuejs run in the project directory
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
+## Contact
+If you have any questions or feedback, feel free to contact me at julysmartins54@gmail.com.
 ## Project Setup
 
 ```sh

@@ -1,11 +1,78 @@
 <script setup lang="ts">
-import { SquaresPlusIcon, BuildingStorefrontIcon, HandThumbUpIcon, ServerIcon, MusicalNoteIcon } from '@heroicons/vue/24/solid';
-import Card from './components/Card.vue';
-
+import { ServerIcon } from '@heroicons/vue/24/solid';
 import List from './components/List.vue'
 import RowCards from './components/RowCards.vue'
 
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
+// export default {
+//   name: 'BarChart',
+//   components: { Bar },
+//   data() {
+//     return {
+//       chartData: {
+//         labels: ['January', 'February', 'March'],
+//         datasets: [{ data: [40, 20, 12] }]
+//       },
+//       chartOptions: {
+//         responsive: true
+//       }
+//     }
+//   }
+// }
+
+const data = {
+  chartData: {
+    labels: ['January', 'February', 'March'],
+    datasets: [
+
+      {
+        label: 'Purchase Orders',
+        backgroundColor: '#334be9',
+        data: [440, 20, 12]
+      },
+
+      {
+        label: 'Purchase Orders',
+        backgroundColor: '#334be9',
+        data: [48, 24, 11]
+      },
+
+    ]
+  },
+  chartOptions: {
+    responsive: true,
+
+    maintainAspectRatio: true
+  }
+}
+
+
+const data1 = {
+  chartData: {
+    labels: ['January', 'February', 'March'],
+    datasets: [
+      {
+        data: [40, 20, 12],
+        label: 'Revenue',
+        backgroundColor: '#334be9',
+      },
+      {
+        data: [500, 25, 4],
+        label: 'Revenue',
+        backgroundColor: '#334be9',
+      }
+
+
+    ]
+  },
+  chartOptions: {
+    responsive: true
+  }
+}
 
 
 
@@ -18,21 +85,39 @@ import RowCards from './components/RowCards.vue'
         <div class="logo">
           JULYS´S BLOG
         </div>
-
         <div class="header-left">
           <List />
         </div>
-
         <div class="header-right">
           <ServerIcon class="icon" />
           <ServerIcon class="icon" />
           <ServerIcon class="icon" />
         </div>
       </header>
-
-
       <main class="main-container">
         <RowCards />
+        <div class="charts">
+          <div class="charts-card">
+            <p class="chart-title">
+              Revenue vs Profit
+            </p>
+            <div id="bar-chart">
+
+              <Bar colo :data="data1.chartData" :options="data1.chartOptions" />
+
+            </div>
+          </div>
+          <div class="charts-card">
+            <p class="chart-title">
+              Purchase and Sales Orders
+            </p>
+            <div id="bar-chart">
+
+              <Bar :data="data.chartData" :options="data.chartOptions" />
+
+            </div>
+          </div>
+        </div>
       </main>
 
     </div>
@@ -40,44 +125,6 @@ import RowCards from './components/RowCards.vue'
 </template>
 
 <style scoped>
-.material-icons-outlined {
-  vertical-align: middle;
-  line-height: 1px;
-
-}
-
-.text-primary {
-  color: #fff;
-}
-
-.text-blue {
-  color: #334be9;
-}
-
-.text-red {
-  color: #e3342f;
-}
-
-.background-red {
-  background-color: #e3342f;
-}
-
-.background-green {
-  background-color: #38c172;
-}
-
-.background-blue {
-  background-color: #334be9;
-}
-
-.text-orange {
-  color: #ff7e00;
-}
-
-.background-orange {
-  background-color: #ff7e00;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -107,8 +154,6 @@ import RowCards from './components/RowCards.vue'
 }
 
 
-
-
 a {
   color: #fff;
   text-decoration: none;
@@ -127,12 +172,43 @@ a {
 
 }
 
-.main-title {
-  display: flex;
-  justify-content: space-between;
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.main-title>p {
-  font-size: 20px;
+.charts-card {
+  background-color: #2c2e3a;
+  margin-bottom: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  border-radius: 5px;
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media screen and (max-width: 962px) {
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  #bar-chart {
+    width: 100%;
+  }
 }
 </style>

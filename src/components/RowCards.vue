@@ -17,6 +17,13 @@ import Card from './Card.vue';
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin: 20px 0px;
+}
 
+@media screen and (max-width: 962px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0px;
+  }
 }
 </style>
